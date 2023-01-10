@@ -36,7 +36,7 @@ export default function Weather({ serchedCity }) {
           <h3>{weather.country}</h3>
         </div>
         <div className='temp flex row'>
-          <h2>{weather.temp}ºC</h2>
+          <h2 className='temp'>{weather.temp}ºC</h2>
           <img src={weather.image} />
         </div>
         <h3>{weather.desc}</h3>

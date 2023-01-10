@@ -7,9 +7,6 @@ export default function Home() {
   const [city, setCity] = useState("");
   const [isSearched, setIsSearched] = useState(false);
 
-  const handleClick = () => {
-    setIsSearched(true);
-  };
   return (
     <Container>
       <div className='search'>
@@ -18,11 +15,11 @@ export default function Home() {
           placeholder='City'
           value={city}
           onChange={(e) => {
-            setCity(e.target.value);
             setIsSearched(false);
+            setCity(e.target.value);
           }}
         />
-        <FaSearch onClick={() => handleClick()} />
+        <FaSearch onClick={() => setIsSearched(true)} />
       </div>
       <Weather serchedCity={isSearched ? city : "Karlstad"} />
     </Container>
